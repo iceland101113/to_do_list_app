@@ -1,0 +1,25 @@
+<h1 style="text-align:center;padding-bottom:10px;">我的待辦清單</h1>
+
+<div style="padding-left:20px;padding-right:20px;">
+  <table class="table table-bordered table-hover">
+      <tr>
+        <td>待辦事項</td>
+        <td>須完成日期</td>
+        <td>查看詳細內容</td>
+        <td>編輯</td>
+        <td>刪除</td>
+      </tr> 
+    <% @todolists.each do |todolist| %>
+      <tr>
+        <td><input type="checkbox" value=""> <%= todolist.title %></td>
+        <td><%= todolist.due_date %></td>
+        <td><span class="glyphicon glyphicon-search" "></span><%= link_to '顯示', todolist_path(todolist) %></td>
+        <td><span class="glyphicon glyphicon-pencil" "></span><%= link_to '編輯', edit_todolist_path(todolist) %></td>
+        <td><% if Date.today < todolist.due_date %><span class="glyphicon glyphicon-trash" "></span><%= link_to '刪除', todolist_path(todolist), method: :delete, data:{ confirm: "確定刪除?" } %><% else %><span class="glyphicon glyphicon-trash" "></span>刪除<% end %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<div style="padding-left:20px;">
+  <%= link_to '新增待辦事項', new_todolist_path %>
+</div>
