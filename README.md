@@ -1,24 +1,7 @@
-# README
+# 代辦事項app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+利用rails建置的代辦事項管理頁面(新增, 修改, 刪除, 及打勾)
 
-Things you may want to cover:
+使用ruby on rails, html, css撰寫
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
